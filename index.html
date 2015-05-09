@@ -1,6 +1,10 @@
 ---
 layout: default
-title: My Blog
+title: My Blogs
 ---
 <h2>{{ page.title }}</h2>
-<p>The Newest Page</p>
+<ul>
+   {% for post in site.posts %}
+       <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+   {% endfor %}
+</ul>
