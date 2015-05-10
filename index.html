@@ -1,11 +1,26 @@
 ---
 layout: default
-title: My Blogs
+title: Blogs of Hongchao
 ---
 <link rel="stylesheet" type="text/css" href="styles.css"></link>
 <h2>{{ page.title }}</h2>
 <ul>
    {% for post in site.posts %}
-       <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+   <!-- #disqus_thread is used for displaying the comment count after each blog -->
+       <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> (<a href="{{site.baseurl}}{{ post.url }}#disqus_thread"></a>)</li>
    {% endfor %}
 </ul>
+
+<!-- enable disqus to count the comment -->
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'hongchaozhang'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>

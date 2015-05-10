@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 title: Caution Javascript Closure in Loop
 ---
 
@@ -43,6 +44,7 @@ Define a function <span style="background-color:yellow;">_addTimer_</span>, to l
 All function type property in widget will call the last function type property
 
 ###Definition 2
+Since there is no block scope in JavaScript - only **function scope** - by wrapping the function creation in a new function, you ensure that the value of `prop` remains as you intended.
 
 ####Code:
     var addTimer = function (widget) {

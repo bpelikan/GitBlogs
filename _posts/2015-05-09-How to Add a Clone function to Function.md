@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 title: How to Add a Clone function to Function?
 ---
 ####add clone functon to Function:

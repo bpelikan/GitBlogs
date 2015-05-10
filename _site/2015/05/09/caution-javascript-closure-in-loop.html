@@ -6,6 +6,7 @@
   </head>
   <body>
 
+	<!-- blog comment goes here -->
     <h1 id="caution-javascript-closure-in-loop">Caution Javascript Closure in Loop</h1>
 
 <h3 id="object">Object</h3>
@@ -47,6 +48,7 @@
 <p>All function type property in widget will call the last function type property</p>
 
 <h3 id="definition-2">Definition 2</h3>
+<p>Since there is no block scope in JavaScript - only <strong>function scope</strong> - by wrapping the function creation in a new function, you ensure that the value of <code>prop</code> remains as you intended.</p>
 
 <h4 id="code-1">Code:</h4>
 <pre><code>var addTimer = function (widget) {
@@ -117,6 +119,27 @@
     }
 };
 </code></pre>
+
+	
+	<!-- disqus comment goes here -->
+	
+<!-- track pages with comments is true in the YAML part of it -->
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    // Required: on line below, replace text in quotes with your forum shortname
+    var disqus_shortname = 'hongchaozhang';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
   </body>

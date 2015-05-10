@@ -1,30 +1,7 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>How to Add a Clone function to Function?</title>
-  </head>
-  <body>
 
-	<!-- blog comment goes here -->
-    <h4 id="add-clone-functon-to-function">add clone functon to Function:</h4>
-
-<pre><code>Function.prototype.clone = function() {
-    var that = this;
-    var temp = function temporary() { return that.apply(this, arguments); };
-    for( key in this ) {
-        temp[key] = this[key];
-    }
-    return temp;
-};
-</code></pre>
-
-	
-	<!-- disqus comment goes here -->
-	
 <!-- track pages with comments is true in the YAML part of it -->
 
-
+{% if page.comments %}
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
@@ -39,7 +16,4 @@
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-  </body>
-  </html>
+{% endif %}
