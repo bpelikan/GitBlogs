@@ -2,7 +2,7 @@
 layout: default
 title: How to Add a Clone function to Function?
 ---
-####add clone functon to Function :
+####add clone functon to Function:
     
     Function.prototype.clone = function() {
         var that = this;
