@@ -3,22 +3,34 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>{{ page.title }}</title>
-	<style>
-		pre {
-			border: dashed 1px gray;
-		}
-	</style>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+
+	<!-- Icons -->
+	<!--
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/apple-touch-icon-precomposed.png">
+	<link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico">
+	-->
   </head>
   <body>
-
-	<!-- blog comment goes here -->
-    {{ content }}
+	<div class="container content">
+		<!-- blog comment goes here -->
+		{{ content }}
+		
+		<!-- disqus comment goes here -->
+		{% include comments.html %}
+		
+		<!-- for google analytics -->
+		{% include googleAnalytics.html %}
+		
+		<!-- footer -->
+		<footer class="footer">
+			<small>
+			  &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
+			</small>
+		</footer>
 	
-	<!-- disqus comment goes here -->
-	{% include comments.html %}
-	
-	<!-- for google analytics -->
-	{% include googleAnalytics.html %}
-
+	</div>
   </body>
   </html>
