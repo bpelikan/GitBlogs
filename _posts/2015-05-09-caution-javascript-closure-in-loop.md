@@ -12,34 +12,34 @@ Define a function <span style="background-color:yellow;">_addTimer_</span>, to l
 ###Definition 1
 
 ####Code:
-	var addTimer = function (widget) {
-		var prop;
-		for (prop in widget) {
-			if (typeof widget[prop] === 'function') {
-				var backupFunc = widget[prop];
-				// the same problem with the following code
-				//backupFunc = (function () {
-				//	return widget[prop];
-				//})();
-				
-				// try a deep copy here to make bakcupFunc not changed with prop
-				widget[prop] = function () {
-					console.time("from timer " + prop);
-					backupFunc.apply(this, arguments);
-					console.timeEnd("from timer " + prop);
-				};
-				// the same problem with the following code
-				//widget[prop] = (function () {
-				//	return function () {
-				//		console.time(prop);
-				//		backupFunc.apply(this, arguments);
-				//		console.timeEnd(prop);
-				//	};
-				//})();
-			}
-		}
-	}
-	
+    var addTimer = function (widget) {
+        var prop;
+        for (prop in widget) {
+            if (typeof widget[prop] === 'function') {
+                var backupFunc = widget[prop];
+                // the same problem with the following code
+                //backupFunc = (function () {
+                //    return widget[prop];
+                //})();
+                
+                // try a deep copy here to make bakcupFunc not changed with prop
+                widget[prop] = function () {
+                    console.time("from timer " + prop);
+                    backupFunc.apply(this, arguments);
+                    console.timeEnd("from timer " + prop);
+                };
+                // the same problem with the following code
+                //widget[prop] = (function () {
+                //    return function () {
+                //        console.time(prop);
+                //        backupFunc.apply(this, arguments);
+                //        console.timeEnd(prop);
+                //    };
+                //})();
+            }
+        }
+    }
+    
 ####Problem
 All function type property in widget will call the last function type property
 
@@ -60,7 +60,6 @@ Since there is no block scope in JavaScript - only **function scope** - by wrapp
             if (typeof widget[prop] === 'function') {
                 widget[prop] = getFuncWithTimer(prop);
             }
-
         }
     };
     
@@ -73,7 +72,7 @@ exceed maximum call stack
     var addTimer = function (widget) {
         var prop;
         var getFuncWithTimer = function (prop) {
-			var backupFunc = widget[prop];
+            var backupFunc = widget[prop];
             return function () {
                 console.time("from timer " + prop);
                 backupFunc.apply(this, arguments);
@@ -84,7 +83,6 @@ exceed maximum call stack
             if (typeof widget[prop] === 'function') {
                 widget[prop] = getFuncWithTimer(prop);
             }
-
         }
     };
     
@@ -97,18 +95,17 @@ All function with returned value can not work
     var addTimer = function (widget) {
         var prop;
         var getFuncWithTimer = function (prop) {
-			var backupFunc = widget[prop];
+            var backupFunc = widget[prop];
             return function () {
                 console.time("from timer " + prop);
                 var ret = backupFunc.apply(this, arguments);
                 console.timeEnd("from timer " + prop);
-				return ret;
+                return ret;
             };
         };
         for (prop in widget) {
             if (typeof widget[prop] === 'function') {
                 widget[prop] = getFuncWithTimer(prop);
             }
-
         }
     };

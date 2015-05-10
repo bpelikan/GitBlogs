@@ -25,31 +25,31 @@
 
 <h4 id="code">Code:</h4>
 <pre><code>var addTimer = function (widget) {
-	var prop;
-	for (prop in widget) {
-		if (typeof widget[prop] === 'function') {
-			var backupFunc = widget[prop];
-			// the same problem with the following code
-			//backupFunc = (function () {
-			//	return widget[prop];
-			//})();
-			
-			// try a deep copy here to make bakcupFunc not changed with prop
-			widget[prop] = function () {
-				console.time("from timer " + prop);
-				backupFunc.apply(this, arguments);
-				console.timeEnd("from timer " + prop);
-			};
-			// the same problem with the following code
-			//widget[prop] = (function () {
-			//	return function () {
-			//		console.time(prop);
-			//		backupFunc.apply(this, arguments);
-			//		console.timeEnd(prop);
-			//	};
-			//})();
-		}
-	}
+    var prop;
+    for (prop in widget) {
+        if (typeof widget[prop] === 'function') {
+            var backupFunc = widget[prop];
+            // the same problem with the following code
+            //backupFunc = (function () {
+            //    return widget[prop];
+            //})();
+            
+            // try a deep copy here to make bakcupFunc not changed with prop
+            widget[prop] = function () {
+                console.time("from timer " + prop);
+                backupFunc.apply(this, arguments);
+                console.timeEnd("from timer " + prop);
+            };
+            // the same problem with the following code
+            //widget[prop] = (function () {
+            //    return function () {
+            //        console.time(prop);
+            //        backupFunc.apply(this, arguments);
+            //        console.timeEnd(prop);
+            //    };
+            //})();
+        }
+    }
 }
 </code></pre>
 
@@ -73,7 +73,6 @@
         if (typeof widget[prop] === 'function') {
             widget[prop] = getFuncWithTimer(prop);
         }
-
     }
 };
 </code></pre>
@@ -87,7 +86,7 @@
 <pre><code>var addTimer = function (widget) {
     var prop;
     var getFuncWithTimer = function (prop) {
-		var backupFunc = widget[prop];
+        var backupFunc = widget[prop];
         return function () {
             console.time("from timer " + prop);
             backupFunc.apply(this, arguments);
@@ -98,7 +97,6 @@
         if (typeof widget[prop] === 'function') {
             widget[prop] = getFuncWithTimer(prop);
         }
-
     }
 };
 </code></pre>
@@ -112,19 +110,18 @@
 <pre><code>var addTimer = function (widget) {
     var prop;
     var getFuncWithTimer = function (prop) {
-		var backupFunc = widget[prop];
+        var backupFunc = widget[prop];
         return function () {
             console.time("from timer " + prop);
             var ret = backupFunc.apply(this, arguments);
             console.timeEnd("from timer " + prop);
-			return ret;
+            return ret;
         };
     };
     for (prop in widget) {
         if (typeof widget[prop] === 'function') {
             widget[prop] = getFuncWithTimer(prop);
         }
-
     }
 };
 </code></pre>
@@ -169,7 +166,7 @@
 		<!-- footer -->
 		<footer class="footer">
 			<small>
-			  &copy; <time datetime="2015-05-10T18:48:29+08:00">2015</time>. All rights reserved.
+			  &copy; <time datetime="2015-05-10T22:48:58+08:00">2015</time>. All rights reserved.
 			</small>
 		</footer>
 	
