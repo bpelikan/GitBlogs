@@ -2,7 +2,7 @@
   <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>How to Add a Clone function to Function?</title>
+    <title>How to deploy MicroStrategy iOS Mobile environment</title>
 	
 	<!-- CSS -->
 	<link rel="stylesheet" href="/GitBlogs/styles.css">
@@ -16,17 +16,15 @@
   <body>
 	<div class="container content">
 		<!-- blog comment goes here -->
-		<h1 id="how-to-add-a-clone-function-to-function">How to Add a Clone function to Function?</h1>
+		<h1 id="how-to-deploy-microstrategy-ios-mobile-environment">How to deploy MicroStrategy iOS Mobile environment</h1>
 
-<pre><code>Function.prototype.clone = function() {
-    var that = this;
-    var temp = function temporary() { return that.apply(this, arguments); };
-    for( key in this ) {
-        temp[key] = this[key];
-    }
-    return temp;
-};
-</code></pre>
+<p>Currently, MicroStrategy Mobile code is in <a href="http://github-mstr.labs.microstrategy.com/"><strong>github</strong></a>. To deploy the environment, you should:</p>
+
+<ol>
+  <li>git clone <em>http://github-mstr.labs.microstrategy.com/MSTRMobile/Mobile.git</em></li>
+  <li>Copy <strong>“Engine”</strong> folder from somewhere else to <strong>“Mobile”</strong> folder you just cloned. <strong>“Engine”</strong> folder can be found in previous clearcase branch.</li>
+  <li>Open the xcode project here: <em>Mobile–&gt;Mobile_Client–&gt;iOS–&gt;MicroStrategyMobile–&gt;MicroStrategyMobile.xcodeproj</em></li>
+</ol>
 
 		
 		<!-- disqus comment goes here -->
