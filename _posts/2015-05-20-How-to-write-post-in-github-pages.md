@@ -6,7 +6,7 @@ title: How to write post in github pages
 
 #{{page.title}}
 
-##Description test
+##Description
 This post is **not** for how to deploy the environment of writing posts in github pages, **but** how to use the environment you deployed before.
 
 Assuming that you have deployed the following tools:
