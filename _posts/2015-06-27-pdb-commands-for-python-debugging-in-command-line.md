@@ -10,7 +10,7 @@ title: pdb commands for python debugging in command line
 
 <table>
 	<tr>
-		<td><strong>python -m pdb &ltname&gt.py[args]</strong></td>
+		<td><strong>python -m pdb &lt;name&gt;.py[args]</strong></td>
 		<td>begin the debugger</td>
 	</tr>
 	<tr>
@@ -77,12 +77,12 @@ Within a python file:
 
 <table>
 	<tr>
-		<td><strong>p &ltname&gt</strong></td>
-		<td>print value of variable &ltname&gt</td>
+		<td><strong>p &lt;name&gt;</strong></td>
+		<td>print value of variable &lt;name&gt;</td>
 	</tr>
 	<tr>
-		<td><strong>!&ltexpr&gt</strong></td>
-		<td>execute the expression &ltexpr&gt</td>
+		<td><strong>!&lt;expr&gt;</strong></td>
+		<td>execute the expression &lt;expr&gt;</td>
 	</tr>
 	<tr>
 		<td><strong>run [args]</strong></td>
