@@ -6,6 +6,7 @@ title: pdb commands for python debugging in command line
 
 #{{page.title}}
 
+The page is from [MIT](http://web.stanford.edu/class/physics91si/2013/handouts/Pdb_Commands.pdf). Keeping here only for reference.
 ###Startup and Help
 
 <table>
