@@ -1,7 +1,7 @@
 ---
-layout:default
-comments:true
-title:pdb commands for python debugging in command line
+layout: default
+comments: true
+title: pdb commands for python debugging in command line
 ---
 
 #{{page.title}}
