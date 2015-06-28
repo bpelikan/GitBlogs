@@ -31,5 +31,5 @@
 
 {% if category_content != '' || tags_content != '' %}
 	<p id="post-meta">Posted {{ category_content }}{{ tags_content }}</p>
-	<p><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b. %d, %Y' }}</time></>
+	<p><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %d, %Y' }}</time></p>
 {% endif %}
