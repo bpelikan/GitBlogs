@@ -1,10 +1,11 @@
 ---
 layout: default
 comments: true
+category: code
+tags: [productivity]
 title: Basic Vim Commands
 ---
-
-#{{page.title}}
+---
 
 **Vim** is an editor to create or edit a text file.
 
@@ -73,6 +74,8 @@ Some useful commands for Vim. (**Note:** the following commands are only used in
 
  * **u** undo
  * **^r(Ctrl+r)** redo
+ * **:set number** Display line number.
+ * **:set nonumber** Don't display line number.
 
 What's more, most commands can be repeated *n* times by typing a number , *n*, before the command. For example, *10dd* means delete *10* lines.
  

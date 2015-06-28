@@ -1,10 +1,11 @@
 ---
 layout: default
 comments: true
+category: code
+tags: [javascript]
 title: How to Add a Clone function to Function?
 ---
-
-#{{page.title}}
+---
     
     Function.prototype.clone = function() {
         var that = this;

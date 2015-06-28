@@ -15,6 +15,10 @@
   </head>
   <body>
 	<div class="container content">
+		<h1>{{ page.title}}</h1>		
+		<!-- add categories and tags for the post -->
+		{% include cat_tag.html %}
+
 		<!-- blog comment goes here -->
 		{{ content }}
 		

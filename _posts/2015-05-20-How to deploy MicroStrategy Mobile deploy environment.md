@@ -1,10 +1,11 @@
 ---
 layout: default
 comments: true
+category: code
+tags: [productivity]
 title: How to deploy MicroStrategy iOS Mobile environment
 ---
-
-#{{page.title}}
+---
 
 Currently, MicroStrategy Mobile code is in [**github**](http://github-mstr.labs.microstrategy.com/). To deploy the environment, you should:
 

@@ -1,10 +1,11 @@
 ---
 layout: default
 comments: true
+category: code
+tags: [productivity]
 title: How to write post in github pages
 ---
-
-#{{page.title}}
+---
 
 ##Description
 This post is **not** for how to deploy the environment of writing posts in github pages, **but** how to use the environment you deployed before.
@@ -28,11 +29,13 @@ In Remote:
 3. open **\_post** folder, add a new md file named like this: *2015-05-20-How-to-write-post-in-github-pages.md*. Notice: **DO NOT** leave any space in the file title.
 4. use **MarkdownPad** to open the md file you created, and put the yaml title on the top as follows (Note: three dashes at the top and bottom):
 
-    \----<br>
+    \-\-\-<br>
     layout: default<br>
     comments: true<br>
+    category: choose only one from /_data/categories.yml<br>
+    tags: [tag1, tag2, ..., tagn] choose from /_data/tags.yml<br>
     title: How to write post in github pages<br>
-    \----<br>
+    \-\-\-<br>
 If you don't have a local MarkdownPad, you can use online tools to edit the md file, like [**stackedit**](https://stackedit.io/), a very powerful one. Five star recommended O(∩_∩)O~！
 
 5. Add the content of the post. For Markdown grammar, refer [here](http://wowubuntu.com/markdown/) for Chinese version.
@@ -44,3 +47,25 @@ For an alternative, you can using your local Jekyll to start a server and test t
 2. Go to you post foler, for me, it is GitBlogs.
 3. Start Jekyll server by running: *jekyll serve*
 4. Open server address listed in cmd window, for me, it is *localhost:4000/GitBlogs*
+
+##To add a new "category" or "tag"
+
+If we want to add a new tag "java" into our blog, we should:
+
+1. go to /blog/tag/ folder, and add a new file named "java.md";
+2. add the following content into the new file:
+
+	\-\-\-<br>
+	layout: blog_by_tag<br>
+	tag: java<br>
+	permalink: /blog/tag/java/<br>
+	\-\-\-<br>
+3. go to /_data/ folder, and open tags.yml;
+4. add the following content into tags.yml file (**NOTE** the indent and spaces):
+	
+	\- slug: java<br>
+	name: java<br> 
+
+For "category", it is similar.
+	
+	

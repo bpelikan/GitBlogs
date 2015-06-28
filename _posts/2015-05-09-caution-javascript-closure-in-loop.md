@@ -1,10 +1,11 @@
 ---
 layout: default
 comments: true
+category: code
+tags: [javascript]
 title: Caution Javascript Closure in Loop
 ---
-
-#{{page.title}}
+---
 
 ###Object
 Define a function <span style="background-color:yellow;">_addTimer_</span>, to log executed time for all function-type property of an object
