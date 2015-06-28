@@ -16,6 +16,7 @@
   <body>
 	<div class="container content">
 		<h1>{{ page.title}}</h1>		
+
 		<!-- add categories and tags for the post -->
 		{% include cat_tag.html %}
 
@@ -23,17 +24,18 @@
 		{{ content }}
 		
 		<!-- disqus comment goes here -->
-		{% include comments.html %}
 		
 		<!-- for google analytics -->
 		{% include googleAnalytics.html %}
 		
 		<!-- footer -->
+		<!-- 
 		<footer class="footer">
 			<small>
 			  &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
 			</small>
 		</footer>
+		-->
 	
 	</div>
   </body>
