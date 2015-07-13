@@ -79,6 +79,8 @@ Some useful commands for Vim. (**Note:** the following commands are only used in
 
 What's more, most commands can be repeated *n* times by typing a number , *n*, before the command. For example, *10dd* means delete *10* lines.
  
+###Set Vim for Python
 
-
+If you want to write **Python** code in Vim, it is better to set ~/.vimrc (for Mac) to support Python syntax, indent, etc. For default, there is not such file in the HOME path. Just create one.
+For the content, refer to official configuration at [here](http://svn.python.org/projects/python/trunk/Misc/Vim/vimrc).
 
