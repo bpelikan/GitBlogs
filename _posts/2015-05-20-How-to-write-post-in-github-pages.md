@@ -26,7 +26,7 @@ In Remote:
 
 1. git clone *https://github.com/hongchaozhang/GitBlogs.git*
 2. go to *gh-pages* branch
-3. open **\_post** folder, add a new md file named like this: *2015-05-20-How-to-write-post-in-github-pages.md*. Notice: **DO NOT** leave any space in the file title.
+3. open **_post** folder, add a new md file named like this: *2015-05-20-How-to-write-post-in-github-pages.md*. Notice: **DO NOT** leave any space in the file title.
 4. use **MarkdownPad** to open the md file you created, and put the yaml title on the top as follows (Note: three dashes at the top and bottom):
 
     \-\-\-<br>
