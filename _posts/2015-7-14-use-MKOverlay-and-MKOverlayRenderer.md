@@ -9,7 +9,7 @@ title: Use MKOverlay and MKOverlayRenderer
 
 ###MKOverlay
 
-Write your own overlay class (for example, *MapOverlay*) comply with *MKOverlay*, synthesize *coordinate* and *boundingMapRect*, so that we can assign value to them while initializing it.
+Write your own overlay class (for example, *MapOverlay*) confirm to *MKOverlay*, synthesize *coordinate* and *boundingMapRect*, so that we can assign value to them while initializing it.
 
 Note that the type of *coordinate* is *CLLocationCoordinate2D* with *latitude* and *longitude*, while *boundingMapRect* is *MKMapRect*. And we need to use *MKMapPointForCoordinate* method to convert a *CLLocationCoordinate2D* type data to *MKMapPoint* type data. If we assign the *CLLocationCoordinate2D* data directly to *boundingMapRect*, the overlay will be too small to draw, and the *mapView:rendererForOverlay:* method will not be called at all. It is very hard for debugging.
 
@@ -41,20 +41,17 @@ Sample code:
 
 ###MKOverlayRenderer
 
-Write your own overlay renderer class (for example, *MapOverlayRenderer*) comply with *MKOverlayRenderer*, and implement *drawMapRect:zoomScale:inContext:* method.
+Write your own overlay renderer class (for example, *MapOverlayRenderer*) confirm to *MKOverlayRenderer*, and implement *drawMapRect:zoomScale:inContext:* method.
 
 Sample code:
 
-	- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+	- (void)drawMapRect:(MKMapRect)mapRect zoomScale:(MKZoomScale)zoomScale inContext:(CGContextRef)context
 	{
-	    if ([overlay isKindOfClass:[MapOverlay class]]) {
-	        MapOverlayRenderer *overlayRenderer = [[MapOverlayRenderer alloc] initWithOverlay:overlay];
-	        
-	        return overlayRenderer;
-	    }
-	    
-	    return nil;
-	}	
+	    MKMapRect overlayMapRect = self.overlay.boundingMapRect;
+	    CGRect drawRect = [self rectForMapRect:overlayMapRect];
+	    CGContextSetRGBFillColor(context, 0, 0, 1, 0.4);
+	    CGContextFillRect(context, drawRect);
+	}
 
 ###Interact with MKMapView
 
