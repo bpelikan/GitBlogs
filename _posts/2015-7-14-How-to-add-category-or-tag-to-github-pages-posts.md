@@ -7,7 +7,7 @@ title: How to add category or tag to github page posts
 ---
 ---
 
-###Introduction
+### Introduction
 
 The **index** page includes *cat_tag_for_index.html* for showing all the categories and tags, and the number of the corresponding posts.
 
@@ -16,11 +16,11 @@ The **_layouts/default.html** describes the content of a post, because post incl
 *_data/categories.yml* and *_data/tags.yml* describe all the categories and tags.
 
 
-###Category
+### Category
 
 To add a **category**:
 
-1. add the category in *_data/categories.yml*. The *slug* tag is used as the *id*, the *name* is used the the *description*, and the *color* is used as the background color.
+1. add the category in *_data/categories.yml*. The *slug* tag is used as the *id*, the *name* is used as the *description*, and the *color* is used as the background color.
 2. in folder *blog/category/*, add a *.md* file with the category as the file name. use the following as the content (change *category_name* to the real category name):
 
 	\-\-\-<br>
@@ -29,10 +29,10 @@ To add a **category**:
 	permalink: /blog/category/category_name/<br>
 	\-\-\-<br>
 
-Now we can use *category: category_name* in the post YAML header to indicate the category of the post.
+Now we can use *category: category_name* in the post *YAML* header to indicate the category of the post.
 
 **Note:** the category name can not contain capital letter. For example, *testCat* will not work as a new category.
 
-###Tag
+### Tag
 
-Adding a new tag is very similar to adding a new category.
+Adding a new **tag** is very similar to adding a new category.
