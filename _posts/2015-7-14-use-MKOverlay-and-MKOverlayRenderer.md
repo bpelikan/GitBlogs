@@ -9,9 +9,9 @@ title: Use MKOverlay and MKOverlayRenderer
 
 ###MKOverlay
 
-Write your own overlay class (for example, *MapOverlay*) confirm to *MKOverlay*, synthesize *coordinate* and *boundingMapRect*, so that we can assign value to them while initializing it.
+Write your own overlay class (for example, `MapOverlay`) confirm to `MKOverlay`, synthesize `coordinate` and `boundingMapRect`, so that we can assign value to them while initializing it.
 
-Note that the type of *coordinate* is *CLLocationCoordinate2D* with *latitude* and *longitude*, while *boundingMapRect* is *MKMapRect*. And we need to use *MKMapPointForCoordinate* method to convert a *CLLocationCoordinate2D* type data to *MKMapPoint* type data. If we assign the *CLLocationCoordinate2D* data directly to *boundingMapRect*, the overlay will be too small to draw, and the *mapView:rendererForOverlay:* method will not be called at all. It is very hard for debugging.
+Note that the type of `coordinate` is `CLLocationCoordinate2D` with `latitude` and `longitude`, while `boundingMapRect` is `MKMapRect`. And we need to use `MKMapPointForCoordinate` method to convert a `CLLocationCoordinate2D` type data to `MKMapPoint` type data. If we assign the `CLLocationCoordinate2D` data directly to `boundingMapRect`, the overlay will be too small to draw, and the `mapView:rendererForOverlay:` method will not be called at all. It is very hard for debugging.
 
 Sample code: 
 
@@ -41,7 +41,7 @@ Sample code:
 
 ###MKOverlayRenderer
 
-Write your own overlay renderer class (for example, *MapOverlayRenderer*) confirm to *MKOverlayRenderer*, and implement *drawMapRect:zoomScale:inContext:* method.
+Write your own overlay renderer class (for example, `MapOverlayRenderer`) confirm to `MKOverlayRenderer`, and implement `drawMapRect:zoomScale:inContext:` method.
 
 Sample code:
 
@@ -55,7 +55,7 @@ Sample code:
 
 ###Interact with MKMapView
 
-After you implement your overlay and overlay renderer, implement *mapView:redererForOverlay* method in your map view's delegate. In this method, you need to return an instance of your own overlay renderer, initialized with the given overlay.
+After you implement your overlay and overlay renderer, implement `mapView:redererForOverlay` method in your map view's delegate. In this method, you need to return an instance of your own overlay renderer, initialized with the given overlay.
 
 Sample code:
 
@@ -70,7 +70,7 @@ Sample code:
 	    return nil;
 	}
 
-Then, we can add overlay instance to the map view through *addOverlay* or *addOverlays* methods.
+Then, we can add overlay instance to the map view through `addOverlay` or `addOverlays` methods.
 
 Sample code:
 
