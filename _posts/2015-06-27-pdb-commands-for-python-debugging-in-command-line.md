@@ -14,7 +14,7 @@ The page is from [MIT](http://web.stanford.edu/class/physics91si/2013/handouts/P
 
 <table>
 	<tr>
-		<td><strong>python -m pdb &lt;name&gt;.py[args]</strong></td>
+		<td><strong>python -m pdb &lt;name&gt;.py [args]</strong></td>
 		<td>begin the debugger</td>
 	</tr>
 	<tr>
