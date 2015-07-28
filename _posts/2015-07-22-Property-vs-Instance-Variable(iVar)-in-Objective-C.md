@@ -32,6 +32,8 @@ Then, what's the difference?
 
 For a private/protected variable, use iVar; for a public variable, use property. If you want to use the benifit of property attributes, like retain, nonatomic etc., declare the property in the implementation file as a private property.
 
+For an iVar, you can use `@private`, `@protected` and `@public`. But these attributes only influence the access of its subclass, and has nothing to do with the access ability of its instances. Go to [here](http://www.cnblogs.com/andyque/archive/2011/08/03/2125728.html) for reference.
+
 ### usage
 
 Directly use an iVar inside the class, for example, `photographer`. But use `self.` for a property, for example, `self.photographer`.
