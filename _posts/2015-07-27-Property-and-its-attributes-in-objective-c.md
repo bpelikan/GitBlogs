@@ -3,9 +3,13 @@ layout: default
 comments: true
 category: code
 tags: [ios]
-title: Property and the attributes in objective-c
+title: Property and its Attributes in Objective-C
 ---
 ---
+
+
+
+* @synthesize: @synthesize can only be used to property, not iVar.
 
 * atomic / nonatomic
 

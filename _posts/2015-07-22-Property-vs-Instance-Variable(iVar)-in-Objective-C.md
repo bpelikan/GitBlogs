@@ -44,6 +44,8 @@ iVar is faster than property, as property will call the `getter` or `setter` fun
 
 ### @synthesize for property
 
+`@synthesize` is only for property, not iVar. For every property, complier will automatically synthesize it using `_propertyName`. The auto synthesize is the same as you add `@synthesize propertyName = _propertyName`. If you only add `@synthesize propertyName`, it is the same with `@synthesize propertyName = propertyName`, and if you define an iVar with the name `propertyName`, they will be synthesized. That is to say, in the accessors of **property** `propertyName`, it will use **iVar** `propertyName`.
+
 If you add `@synthesize photographer` in the implementation, compiler will automatically add an iVar `photographer` and `_photographer` to the class. You can directly use `photographer` or `_photographer` instead of `self.photographer` to get or set the value. The iVar method is faster, but keep in mind that it will not call the `getter` or `setter` method.
 
 If you declare the class like:
