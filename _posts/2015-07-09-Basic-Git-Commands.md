@@ -9,6 +9,7 @@ title: Basic Git Commands
 
 # Contents
 
+* [Branch Operation](#branch_operation)
 * [Check commit history](#check_commit_history)
 * [.gitignore](#git_ignore)
 * [Using *git stash*](#git_stash)
@@ -22,6 +23,11 @@ First of all, try the following commands first:
 * **git help:** get git basic commands.
 
 * **git help COMMAND:** get help of a command.
+
+
+## <a name="branch_operation"></a>Branch Operation
+
+To checkout a new branch from remote repo: When you want to change to a branch that is not in your local side, use `git branch -a` to list all the branches, and find the one you want to checkout in the remote. Then run `git checkout --track origin/<branch_name>`, and you will get the branch. Use `git branch` to check it.
 
 ## <a name="check_commit_history"></a>Check commit history
 
