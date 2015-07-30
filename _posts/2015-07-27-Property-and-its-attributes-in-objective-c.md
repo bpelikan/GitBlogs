@@ -7,17 +7,17 @@ title: Property and its Attributes in Objective-C
 ---
 ---
 
-
-
-* @synthesize: @synthesize can only be used to property, not iVar.
+All the attributes of a property defines how the compiler generate the `getter` and `setter` accessors.
 
 * atomic / nonatomic
 
-* strong / weak
+* strong / weak: used for ARC.
 
-* assign / retain / copy: go to [here](http://blog.csdn.net/jiarusun000/article/details/6991249) for reference.
+* assign / retain / copy: go to [here](http://blog.csdn.net/jiarusun000/article/details/6991249) for reference. These properties define how the compiler generate the `setter` accessor.
 
-* readonly / readwrite
+* readonly / readwrite: if a property is declared as `readonly`, the compiler will only declare the getter accessor, so that you can not call setter accessor. This is called `readonly`.
+
+Apart from above, `@synthesize` define the instance variable used for accessors. `@synthesize` can only be used to property, not iVar. For more info, see [Property vs Instance Variable (iVar) in objective-c](http://hongchaozhang.github.io/GitBlogs/code/2015/07/22/Property-vs-Instance-Variable(iVar)-in-Objective-C.html).
 
 [Here](http://www.cnblogs.com/andyque/archive/2011/08/03/2125728.html) has a detail description. And the useful part:
  

@@ -7,7 +7,7 @@ title: How to add category or tag to github page posts
 ---
 ---
 
-**[updated]** For adding category or tag automatically through python script, to to [here](http://hongchaozhang.github.io/GitBlogs/code/2015/06/27/instructions-for-adding-tags-and-categories.html).
+**[updated]** For adding category or tag automatically through python script, go to [here](http://hongchaozhang.github.io/GitBlogs/code/2015/06/27/instructions-for-adding-tags-and-categories.html).
 
 ### Introduction
 
