@@ -11,3 +11,10 @@ title: Communication between WebView and native android
 
 [android develop javascript bridge example fully explained](http://www.programgo.com/article/96442797990/)
 
+## Description
+
+## Javascript and Java Bridge
+
+### cope with `return` value
+
+## Multi-thread in Java side and Single-thread in Javascript side
