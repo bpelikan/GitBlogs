@@ -7,15 +7,11 @@ title: Communication between WebView and native android
 ---
 ---
 
-[Java和Javascript安全交互](http://jiajixin.cn/2014/09/16/webview-js-safety/)
-
-[android develop javascript bridge example fully explained](http://www.programgo.com/article/96442797990/)
-
 ## Description
 
 In Android project, we sometimes want to rend a page in **WebView**, and need communication between webview and native android side.
 
-**Note:** Go to [here(**TODO**)]() for a project as a sample.
+**Note:** Go to [here](https://github.com/hongchaozhang/android_java_javascript_communication) for a project as a sample.
 
 ## Javascript and Java Bridge
 
@@ -99,7 +95,7 @@ Java can directly return String back to Javascritp, so we can use the following 
 
 As `WebView.loadUrl` does not return anything, so Java can not get results from Javascript. We need other ways to get the result.
 
-**TODO**
+Currently, we have no way to do this. The work around is: when javascript get the result, call a method in java side through the interface `MyHandler`, and pass the result as a parameter. As java call `WebView.loadurl` in a differenct thread, so even in this way, we can not get the result right away for use in the next line.
 
 ## Multi-thread in Java side and Single-thread in Javascript side
 
