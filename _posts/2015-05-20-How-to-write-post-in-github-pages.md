@@ -75,3 +75,5 @@ Refer [here](http://www.reddit.com/r/web_design/comments/2qq4me/does_google_inde
 Google crawls and ranks websites partially based on links to it from other websites. You should consider submitting it to some award websites, show-and-tells, etc to increase the value of the domain.
 
 It can take a few days to a few months to be indexed, depending on several factors. It's recommended that you use the [submit URL](https://www.google.com/webmasters/tools/submit-url) tool, which may help speed up this process.
+
+I tried the [submit URL](https://www.google.com/webmasters/tools/submit-url) tool, and after hald day, my blogs can be searched in google. But you should use exactly the same words in your post to search, or your post may be very behind, as the value of your domain is very low.
