@@ -7,7 +7,7 @@ title: How to write post in github pages
 ---
 ---
 
-##Description
+## Description
 This post is **not** for how to deploy the environment of writing posts in github pages, **but** how to use the environment you deployed before.
 
 Assuming that you have deployed the following tools:
@@ -22,7 +22,7 @@ In Remote:
 
 * github repo
 
-##To add a new post:
+## To add a new post
 
 1. git clone *https://github.com/hongchaozhang/GitBlogs.git*
 2. go to *gh-pages* branch
@@ -48,7 +48,7 @@ For an alternative, you can using your local Jekyll to start a server and test t
 3. Start Jekyll server by running: *jekyll serve*
 4. Open server address listed in cmd window, for me, it is *localhost:4000/GitBlogs*
 
-##To add a new "category" or "tag"
+## To add a new "category" or "tag"
 
 If we want to add a new tag "java" into our blog, we should:
 
@@ -68,4 +68,10 @@ If we want to add a new tag "java" into our blog, we should:
 
 For "category", it is similar.
 	
-	
+## To make the post searchable by Google
+
+Refer [here](http://www.reddit.com/r/web_design/comments/2qq4me/does_google_index_github_pages/).
+
+Google crawls and ranks websites partially based on links to it from other websites. You should consider submitting it to some award websites, show-and-tells, etc to increase the value of the domain.
+
+It can take a few days to a few months to be indexed, depending on several factors. It's recommended that you use the [submit URL](https://www.google.com/webmasters/tools/submit-url) tool, which may help speed up this process.
