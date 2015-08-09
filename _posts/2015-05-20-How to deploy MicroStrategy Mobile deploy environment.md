@@ -1,8 +1,8 @@
 ---
 layout: default
 comments: true
-category: code
-tags: [productivity]
+category: tools
+tags: [ios,productivity]
 title: How to deploy MicroStrategy iOS Mobile environment
 ---
 ---

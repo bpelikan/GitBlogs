@@ -1,7 +1,7 @@
 ---
 layout: default
 comments: true
-category: code
+category: tools
 tags: [productivity]
 title: How to add category or tag to github page posts
 ---

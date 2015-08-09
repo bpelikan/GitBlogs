@@ -2,7 +2,7 @@
 layout: default
 comments: true
 category: code
-tags: [ios]
+tags: [ios,objective-c]
 title: Property and its Attributes in Objective-C
 ---
 ---

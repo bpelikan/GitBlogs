@@ -2,7 +2,7 @@
 layout: default
 comments: true
 category: code
-tags: [ios]
+tags: [ios,objective-c]
 title: Property vs Instance Variable (iVar) in objective-c
 ---
 ---

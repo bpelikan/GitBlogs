@@ -2,7 +2,7 @@
 layout: default
 comments: true
 category: code
-tags: [android, java]
+tags: [android,java]
 title: Communication between WebView and native android
 ---
 ---

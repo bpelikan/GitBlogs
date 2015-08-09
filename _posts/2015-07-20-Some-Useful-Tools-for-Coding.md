@@ -1,7 +1,7 @@
 ---
 layout: default
 comments: true
-category: code
+category: tools
 tags: [productivity]
 title: Some Useful Tools for Coding
 ---

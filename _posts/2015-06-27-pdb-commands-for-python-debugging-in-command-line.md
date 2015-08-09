@@ -1,8 +1,8 @@
 ---
 layout: default
 comments: true
-category: code
-tags: [productivity]
+category: tools
+tags: [python,productivity]
 title: pdb commands for python debugging in command line
 ---
 ---

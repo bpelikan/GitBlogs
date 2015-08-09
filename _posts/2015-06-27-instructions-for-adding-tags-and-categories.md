@@ -1,8 +1,8 @@
 ---
 layout: default
 comments: true
-category: code
-tags: [productivity]
+category: tools
+tags: [python,productivity]
 title: How to use the python script for adding tags and categories
 ---
 ---
