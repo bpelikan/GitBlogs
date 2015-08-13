@@ -16,6 +16,6 @@ Refer [Mac和iOS开发资源汇总](http://blog.csdn.net/cui7230102/article/deta
 * [MacTalk By 池建强](http://macshuo.com/)
 * [唐巧的技术博客](http://blog.devtang.com/)
 * [Cocoa China](http://www.cocoachina.com/)
-* [easonoutlook](http://www.cnblogs.com/easonoutlook/)
-* [anwser_huang](http://answerhuang.duapp.com/)
+* [<del>easonoutlook</del>](http://www.cnblogs.com/easonoutlook/)
+* [<del>anwser_huang</del>](http://answerhuang.duapp.com/)
 
