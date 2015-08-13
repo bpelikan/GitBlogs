@@ -58,7 +58,7 @@ In Android project, we sometimes want to rend a page in **WebView**, and need co
 		}
 	
 	1) Pay attention to `addJavascriptinterface`, which add the javascript interface, and gives the interface a name `MyHandler`.
-2) To be able to debug web page inside webview, `setWebContentsDebuggingEnabled(true)` should be called for android version after '*KITKAT(4.4)*'.
+2) To be able to debug web page inside webview, `setWebContentsDebuggingEnabled(true)` should be called for android version after `KITKAT(4.4)`.
 
 3. Then we can use the following way to call javascript function and change html page from java side:
 
