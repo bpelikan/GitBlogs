@@ -68,7 +68,9 @@ Actually, `[p valueForKeyPath:@"spouse.name"];` equals to `[[p valueForKey:@"spo
 
 ### Description
 
-*Key Value Observer (KVO)* is based on KVC, and can observe the change of a property.
+*Key Value Observer (KVO)* is based on KVC, and can observe the change of a property of another object.
+
+KVO allows you to register as an observer of a given object and receive notification when specific properties on that object are changed. It’s an incredibly powerful capability, and it is built into Objective-C at its very core.
 
 ### Sample code
 
@@ -132,7 +134,9 @@ Implement `PersonWatcher` for observing a `Person` instance.
 
 Refer [here](http://stackoverflow.com/questions/6959896/kvo-and-arc-how-to-removeobserver)
 
-Remember to remove observers 
+You should stop observing the sender when observer is dealloced. If you fail to do this and then allow the observer to be deallocated, then future notifications to the observer may cause your application to crash.
+
+So, remember to remove observers 
 
 1. before observer is dealloced
 2. before the sender is dealloced
