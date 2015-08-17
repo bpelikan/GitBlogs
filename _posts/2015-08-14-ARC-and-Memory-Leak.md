@@ -14,6 +14,8 @@ Also reference some posts on memory leak, including [What kind of leaks does aut
 ## Garbage Collection
 Garbage Collection (or GC for short) is the technique used for life cycle management on the .NET and Java platforms. The way GC works is that the runtime (either the Common Language Runtime for .NET or the Java Runtime) has infrastructure in place that detects unused objects and object graphs in the background.
 
+> Unfortunately, garbage collection does have a down side. Garbage collection is only available on MacOS X Version 10.5 or above. It is not available, currently (not sure if it is still true today), on iPhone, iPad, or any of the less common platforms, such as Linux or Windows.
+
 This happens at indeterminate intervals (either after a certain amount of time has passed, or when the runtime sees available memory getting low), so objects are not necessarily released at the exact moment they are no longer used.
 
 ### Advantages of Garbage Collection
