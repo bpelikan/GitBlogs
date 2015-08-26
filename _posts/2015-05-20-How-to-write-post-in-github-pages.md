@@ -7,6 +7,14 @@ title: How to write post in github pages
 ---
 ---
 
+**Contents:**
+
+* [To add a new post](to_add_a_new_post)
+* [To add a new "category" or "tag"](to_add_category_and_tag)
+* [To make the post searchable by Google](to_make_the_post_searchable_by_google)
+* [Some tips for markdown grammar](some_tips_for_markdown_grammar)
+
+
 ## Description
 This post is **not** for how to deploy the environment of writing posts in github pages, **but** how to use the environment you deployed before.
 
@@ -22,7 +30,7 @@ In Remote:
 
 * github repo
 
-## To add a new post
+## <a name="to_add_a_new_post"></a>To add a new post
 
 1. git clone *https://github.com/hongchaozhang/GitBlogs.git*
 2. go to *gh-pages* branch
@@ -48,7 +56,7 @@ For an alternative, you can using your local Jekyll to start a server and test t
 3. Start Jekyll server by running: *jekyll serve*
 4. Open server address listed in cmd window, for me, it is *localhost:4000/GitBlogs*
 
-## To add a new "category" or "tag"
+## <a name="to_add_category_and_tag"></a>To add a new "category" or "tag"
 
 If we want to add a new tag "java" into our blog, we should:
 
@@ -68,7 +76,7 @@ If we want to add a new tag "java" into our blog, we should:
 
 For "category", it is similar.
 	
-## To make the post searchable by Google
+## <a name="to_make_the_post_searchable_by_google"></a>To make the post searchable by Google
 
 Refer [here](http://www.reddit.com/r/web_design/comments/2qq4me/does_google_index_github_pages/).
 
@@ -77,3 +85,11 @@ Google crawls and ranks websites partially based on links to it from other websi
 It can take a few days to a few months to be indexed, depending on several factors. It's recommended that you use the [submit URL](https://www.google.com/webmasters/tools/submit-url) tool, which may help speed up this process.
 
 I tried the [submit URL](https://www.google.com/webmasters/tools/submit-url) tool, and after hald day, my blogs can be searched in google. But you should use exactly the same words in your post to search, or your post may be very behind, as the value of your domain is very low.
+
+## <a name="some_tips_for_markdown_grammar"></a>Some tips for markdown grammar
+
+### insert an image
+
+To insert the image, just use the path under the base url, for me, it is */GitBlogs/images/<image_name>.png*, for example
+
+	![image annotation](/GitBlogs/images/001_ios_frameworks.png)

@@ -44,7 +44,13 @@ iVar is faster than property, as property will call the `getter` or `setter` fun
 
 ### @synthesize for property
 
-**UPDATE：Just read this paragraph, omit the paragraphs behind.** `@synthesize` is only for property, not iVar. For every property, complier will automatically synthesize it using `_propertyName`. The auto synthesize is the same as you add `@synthesize propertyName = _propertyName`. If you only add `@synthesize propertyName`, it is the same with `@synthesize propertyName = propertyName`, and if you define an iVar with the name `propertyName`, they will be synthesized. That is to say, in the accessors of **property** `propertyName`, it will use **iVar** `propertyName`.
+**UPDATE：Just read this paragraph, omit the paragraphs behind.** `@synthesize` is only for property, not iVar. It will help the property to generate the getter and setter accessors. For every property, complier will automatically synthesize it using `_propertyName`. The auto synthesize is the same as you add `@synthesize propertyName = _propertyName`. If you only add `@synthesize propertyName`, it is the same with `@synthesize propertyName = propertyName`, and if you define an iVar with the name `propertyName`, they will be synthesized. That is to say, in the accessors of **property** `propertyName`, it will use **iVar** `propertyName`.
+
+> **Note for property inheritance:** If the super class has a property declared as public, the subclass can inherit the property. But the auto synthesize mechnism will not sythesize the property automatically, and you can only use the getter and setter accessors of the superclass by using dot operation. If you want to synthesize manually, **Be Carefull!** You should avoid using the same iVar as them in the superclass. This will lead to an error message *"property 'propertyName' atemping to use instance variable 'InstanceVariableName' declared in super class 'SuperClassName'"*.
+> 
+> If you inherit a property from a **protocol**, you mush synthesize it, as the protocol only declares it, not synthesize it.
+
+**Omit the following paragraphs in this section**
 
 If you add `@synthesize photographer` in the implementation, compiler will automatically add an iVar `photographer` <del>and `_photographer`</del> to the class. You can directly use `photographer` <del>or `_photographer`</del> instead of `self.photographer` to get or set the value. The iVar method is faster, but keep in mind that it will not call the `getter` or `setter` method.
 

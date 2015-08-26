@@ -43,7 +43,7 @@ You will get your SHA1 fingerprint from:
 
 With your package name and SHA1 fingerprint, now we can generate your key.
 
-1. Go to the [Google Developers Console]().
+1. Go to the [Google Developers Console](https://console.developers.google.com/).
 2. In the sidebar on the left, select *Credentials*.
 3. If your project doesn't already have an Android API key, create one new by selecting **Add credentials -> API key -> Android key**.
 4. In the resulting dialog, enter your app's SHA-1 fingerprint and package name.
@@ -77,3 +77,5 @@ Genymotion can now run applications that require ARM emulation.
 It is similar for Google Play Apps, which can be downloaded from [here](https://www.androidfilehost.com/?fid=95784891001614559)
 
 Go to [How to install Google Play Services in a Genymotion VM (with no drag and drop support)?](http://stackoverflow.com/questions/20121883/how-to-install-google-play-services-in-a-genymotion-vm-with-no-drag-and-drop-su) for details.
+
+At last, **Remenber** to make sure that your device can connect to google server, especially when you are in China.
