@@ -11,13 +11,15 @@ title: How to Use Google Maps Android API Utility Library in Android Studio
 
 * **Marker clustering** — handles the display of a large number of points
 * **Heat maps** — display a large number of points as a heat map
-* **IconGenerator** — display text on your Markers (see screenshot to the right)
+* **IconGenerator** — display text on your Markers
 * **Poly decoding and encoding** — compact encoding for paths, interoperability with Maps API web services
 * **Spherical geometry** — for example: computeDistance, computeHeading, computeArea
 * **KML** — displays KML data (Caution: Beta!)
 * **GeoJSON** — displays and styles GeoJSON data
 
-When I tried to use the library in my Android Studio (Windows OS) project, I met some problems. It is not as simple as the document describes.
+A simple documentation about the usage of these features based on a demo can be found in *Google Developers* page [Google Maps Android API Utility Library](https://developers.google.com/maps/documentation/android/utility/?hl=zh-cn). And you can also refer to the [javadoc](http://googlemaps.github.io/android-maps-utils/javadoc/).
+
+When I tried to use the library in my Android Studio (Windows OS) project, I met some problems. It is not as simple as the [document](http://googlemaps.github.io/android-maps-utils/) describes. A reference for setting up in Eclipse can be found in the [Google Maps Android API Utilities Setup](https://developers.google.com/maps/documentation/android/utility/setup?hl=zh-cn).
 
 As we know, we have three ways to use a library in Android Studio project: *Module dependency*, *Remote binary dependency* and *Local binary dependency*. (Go to [Configure Gradle Builds](https://developer.android.com/tools/building/configuring-gradle.html) for detail). See the following code that we can use in the module `build.gradle`, not the project `build.gradle`
 
