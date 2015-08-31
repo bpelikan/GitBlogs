@@ -9,6 +9,8 @@ title: Resources for iOS developers
 
 Refer [Mac和iOS开发资源汇总](http://blog.csdn.net/cui7230102/article/details/14164221)
 
+Another good github page for iOS resources: [**iOS 学习资料整理**](https://github.com/Aufree/trip-to-iOS).
+
 其中，最近（2015年）仍然在更新的中文博客：
 
 ## Apple官方
