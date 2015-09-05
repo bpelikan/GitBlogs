@@ -9,10 +9,11 @@ title: How to write post in github pages
 
 **Contents:**
 
-* [To add a new post](to_add_a_new_post)
-* [To add a new "category" or "tag"](to_add_category_and_tag)
-* [To make the post searchable by Google](to_make_the_post_searchable_by_google)
-* [Some tips for markdown grammar](some_tips_for_markdown_grammar)
+* [To add a new post](#to_add_a_new_post)
+* [To add a new "category" or "tag"](#to_add_category_and_tag)
+* [To enable code highlight](#to_enable_code_highlight)
+* [To make the post searchable by Google](#to_make_the_post_searchable_by_google)
+* [Some tips for markdown grammar](#some_tips_for_markdown_grammar)
 
 
 ## Description
@@ -75,6 +76,14 @@ If we want to add a new tag "java" into our blog, we should:
 	name: java<br> 
 
 For "category", it is similar.
+
+## <a name="to_enable_code_highlight"></a>To enable code highlihgt
+
+[official site](https://thedereck.github.io/gh-pages-blog/user-manual/syntax-highlighting.html)
+
+[Improve Code Highlighting in a Jekyll-based Blog Site](https://demisx.github.io/jekyll/2014/01/13/improve-code-highlighting-in-jekyll.html)
+
+
 	
 ## <a name="to_make_the_post_searchable_by_google"></a>To make the post searchable by Google
 

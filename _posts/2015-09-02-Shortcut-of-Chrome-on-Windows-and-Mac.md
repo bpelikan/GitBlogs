@@ -19,7 +19,7 @@ I will list some common used ones here by myself.
 Five star recommended:
 
 Windows 		| Mac 					| Function
----				|---					|---
+---|---|---
 Ctrl + F		| Command + F 		| open search toolbar
 ESC				| ESC					| close search toolbar
 Ctrl + W 		| Command + W 		| close a tab
