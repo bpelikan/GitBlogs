@@ -39,13 +39,13 @@ Then, use **git diff COMMIT^ COMMIT** to get all the changes of one commit.
 
 Sometimes we want to ignore some files/folders from being tracked by git. We can use **.gitignore** file to do this. But this only works for the untracked items. If you have done *git add file* to the file once, .gitignore will not exclude this file from being tracked. For this case, we can use the following two ways to ignore the file:
 
-##### git rm \-\-cached file
+##### `git rm \-\-cached file`
 
 This command will remove the file from the stage, and if you exclude the file in the **.gitignore**, it will not appear in the *untrancked files* list. But you will get a *deleted: file* in the *changes to be commited* list, and the next time you commit, the file in the repo will be deleted. 
 
 If this is not what you want, and you only want to ignore the file locally, and don't want to remove it in the repo, because someone else may need this file, go to the second method.
 
-##### git update-index \-\-assume-unchanged file
+##### `git update-index \-\-assume-unchanged file`
 
 This method doesn't need **.gitignore**, and will not delete the file in the repo. The disadvantage is: when you clone the repo in other places, you need to run the command again.
 
@@ -75,29 +75,31 @@ When we trying to checkout `oldbranch` using `git checkout oldbranch`, what is *
 checkout `oldbranch` from `newbranch` with uncommitted changes in `newbranch`, but **NO Conflicts** between the two branches
 
 The sample log:
-
-	M	test.txt
-	Switched to branch 'oldbranch'
+{%highlight text linenos %}
+M	test.txt
+Switched to branch 'oldbranch'
+{% endhighlight %}
 		
 And the `M` means the `test.txt` is successfully merged.
 
 ##### With Conflicts
 
 checkout `oldbranch` from `newbranch` with uncommitted changes in `newbranch`, but **With Conflict** between the two branches. In this situation, if you want to checkout `oldbranch` any way, use `git checkout -m oldbranch` which will let git list all the conflicts, as follows:
-
-	$ git checkout -m oldbranch
-	M   test.txt
-	Switched to branch 'oldbranch'
-	$ cat test.txt
-	This is the test file.
-	<<<<<<< oldbranch
-	Second line added from the 'oldbranch' branch.
-	=======
-	A conflicted line added on the test branch.
-	>>>>>>> local
-	$ git branch
-	* oldbranch
-	  newbranch
+{%highlight text linenos %}
+$ git checkout -m oldbranch
+M   test.txt
+Switched to branch 'oldbranch'
+$ cat test.txt
+This is the test file.
+<<<<<<< oldbranch
+Second line added from the 'oldbranch' branch.
+=======
+A conflicted line added on the test branch.
+>>>>>>> local
+$ git branch
+* oldbranch
+  newbranch
+{% endhighlight %}
 	  
 ##### `git stash`
 
@@ -110,12 +112,12 @@ But most of the time, we want to keep the uncommited changes staying in `newbran
 5. `git stash pop`
 
 *Git* will hold a stash stack for all the stashes in all branches. That is to say, no matter how many branches you have, you will have only one stash stack. So when you run `git stash pop`, you should check the stash stack using `git stash list`, you will get:
-
-	stash@{0}: WIP on oldbranch: 6ed44e2 checkin a new file
-	stash@{1}: WIP on newbranch: 7a51723 checkin
-	stash@{2}: WIP on oldbranch: 022cbf7 first checkin
-	stash@{3}: WIP on newbranch: 6995c80 checkin changes to test.txt
-
+{%highlight text linenos %}
+stash@{0}: WIP on oldbranch: 6ed44e2 checkin a new file
+stash@{1}: WIP on newbranch: 7a51723 checkin
+stash@{2}: WIP on oldbranch: 022cbf7 first checkin
+stash@{3}: WIP on newbranch: 6995c80 checkin changes to test.txt
+{% endhighlight %}
 If you want to roll back the last stash in newbranch, in #5 step, run `git stash pop stash@{1}`. If you don't use the index `stash@{1}`, the top stash in the stash stack will be popped out.
 
 ## Use *kdiff3* as the default tool for git

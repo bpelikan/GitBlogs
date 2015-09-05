@@ -37,30 +37,34 @@ Assume that `Person` class has two simple properties: `name` and `address` and a
 
 For *Key*:
 
-	void changeName(Person *p, NSString *newName)
-	{
-	    // using the KVC accessor (getter) method
-	    NSString *originalName = [p valueForKey:@"name"];
-	 
-	    // using the KVC  accessor (setter) method.
-	    [p setValue:newName forKey:@"name"];
-	 
-	    NSLog(@"Changed %@'s name to: %@", originalName, newName);
-	}
-	
+{% highlight objc linenos %}
+void changeName(Person *p, NSString *newName)
+{
+    // using the KVC accessor (getter) method
+    NSString *originalName = [p valueForKey:@"name"];
+ 
+    // using the KVC  accessor (setter) method.
+    [p setValue:newName forKey:@"name"];
+ 
+    NSLog(@"Changed %@'s name to: %@", originalName, newName);
+}
+{% endhighlight %}
+
 For *KeyPath*:
 
-	void logMarriage(Person *p)
-	{
-	    // just using the accessor again, same as example above
-	    NSString *personsName = [p valueForKey:@"name"];
-	 
-	    // this line is different, because it is using
-	    // a "key path" instead of a normal "key"
-	    NSString *spousesName = [p valueForKeyPath:@"spouse.name"];
-	 
-	    NSLog(@"%@ is happily married to %@", personsName, spousesName);
-	}
+{% highlight objc linenos %}
+void logMarriage(Person *p)
+{
+    // just using the accessor again, same as example above
+    NSString *personsName = [p valueForKey:@"name"];
+ 
+    // this line is different, because it is using
+    // a "key path" instead of a normal "key"
+    NSString *spousesName = [p valueForKeyPath:@"spouse.name"];
+ 
+    NSLog(@"%@ is happily married to %@", personsName, spousesName);
+}
+{% endhighlight %}
 
 Actually, `[p valueForKeyPath:@"spouse.name"];` equals to `[[p valueForKey:@"spouse"] valueForKey:@"name"];`.
 
@@ -76,59 +80,60 @@ KVO allows you to register as an observer of a given object and receive notifica
 
 Implement `PersonWatcher` for observing a `Person` instance.
 
+{% highlight objc linenos %}
+@implementation PersonWatcher
 
-	@implementation PersonWatcher
+static NSString *const KVO_CONTEXT_ADDRESS_CHANGED = @"KVO_CONTEXT_ADDRESS_CHANGED";
 
-	static NSString *const KVO_CONTEXT_ADDRESS_CHANGED = @"KVO_CONTEXT_ADDRESS_CHANGED";
+-(id) init;
+{
+    if(self = [super init]){
+        self.m_observedPeople = [NSMutableArray new];
+    }
+    
+    return self;
+}
 
-	-(id) init;
-	{
-	    if(self = [super init]){
-	        self.m_observedPeople = [NSMutableArray new];
-	    }
-	    
-	    return self;
-	}
+// watch a person
+-(void) watchPersonForChangeOfAddress:(Person *)p
+{
+    // this begins the observing
+    [p addObserver:self
+        forKeyPath:@"address"
+           options:0
+           context:CFBridgingRetain(KVO_CONTEXT_ADDRESS_CHANGED)];
+    
+    // keep a record of all the people being observed,
+    // because we need to stop observing them in dealloc
+    [self.m_observedPeople addObject:p];
+}
 
-	// watch a person
-	-(void) watchPersonForChangeOfAddress:(Person *)p
-	{
-	    // this begins the observing
-	    [p addObserver:self
-	        forKeyPath:@"address"
-	           options:0
-	           context:CFBridgingRetain(KVO_CONTEXT_ADDRESS_CHANGED)];
-	    
-	    // keep a record of all the people being observed,
-	    // because we need to stop observing them in dealloc
-	    [self.m_observedPeople addObject:p];
-	}
+// whenever an observed key path changes, this method will be called
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    // use the context to make sure this is a change in the address,
+    // because we may also be observing other things
+    if(context == CFBridgingRetain(KVO_CONTEXT_ADDRESS_CHANGED)) {
+        NSString *name = [object valueForKey:@"name"];
+        NSString *address = [object valueForKey:@"address"];
+        NSLog(@"%@ has a new address: %@", name, address);
+    }
+}
 
-	// whenever an observed key path changes, this method will be called
-	- (void)observeValueForKeyPath:(NSString *)keyPath
-	                      ofObject:(id)object
-	                        change:(NSDictionary *)change
-	                       context:(void *)context
-	{
-	    // use the context to make sure this is a change in the address,
-	    // because we may also be observing other things
-	    if(context == CFBridgingRetain(KVO_CONTEXT_ADDRESS_CHANGED)) {
-	        NSString *name = [object valueForKey:@"name"];
-	        NSString *address = [object valueForKey:@"address"];
-	        NSLog(@"%@ has a new address: %@", name, address);
-	    }
-	}
-
-	-(void) dealloc;
-	{ 
-	    // must stop observing everything before this object is
-	    // deallocated, otherwise it will cause crashes
-	    for(Person *p in self.m_observedPeople){
-	        [p removeObserver:self forKeyPath:@"address"];
-	    }
-	    
-	    self.m_observedPeople = nil;
-	}
+-(void) dealloc;
+{ 
+    // must stop observing everything before this object is
+    // deallocated, otherwise it will cause crashes
+    for(Person *p in self.m_observedPeople){
+        [p removeObserver:self forKeyPath:@"address"];
+    }
+    
+    self.m_observedPeople = nil;
+}
+{% endhighlight %}
 
 ## <a name="remove_observers"></a>Remove observer
 
