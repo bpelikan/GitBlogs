@@ -83,7 +83,36 @@ For "category", it is similar.
 
 [Improve Code Highlighting in a Jekyll-based Blog Site](https://demisx.github.io/jekyll/2014/01/13/improve-code-highlighting-in-jekyll.html)
 
+* Add [syntax highlighter CSS file](https://github.com/hongchaozhang/GitBlogs/blob/gh-pages/css/syntax.css) as *css/syntax.css* to your site
+* Load CSS inside of a corresponding layout file (e.g. *_layouts/default.html*)
+{% highlight html linenos %}
+<head>
+...
+<link href="/css/syntax.css" rel="stylesheet">
+...
+</head>
+{% endhighlight %}
+* Wrap your code snippets in posts with `{\% highlight objc linenos \%}` and `{\% endhighlight \%}` Liquid tags, Jekyll will (via Pygments highlighter) output color highlighted code based on chosen language scheme (e.g. objc in my case).
 
+There is a problem here: when you select code, the line numbers are also selected. There are two ways to solve this:
+
+* add `linenos=table` instead of `linenos` in the directive `{\% highlight objc linenos \%}`. The table may look ugly.
+* Add the following javascript code into your site (depending on jQuery):
+
+{% highlight javascript linenos %}
+// hide line numbers in code pieces right before we copy the code
+$(document).ready(function () {
+	$("code").bind("copy", function () {
+	    var innerHtml = this.innerHTML;
+	    $(this).find('.lineno').remove();
+	    var that = this;
+	    setTimeout(function(){
+	        $(that).children().remove();
+	        that.innerHTML = innerHtml;
+	    },0);
+	});
+});
+{% endhighlight %}
 	
 ## <a name="to_make_the_post_searchable_by_google"></a>To make the post searchable by Google
 

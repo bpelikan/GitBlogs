@@ -3,13 +3,13 @@
 
 $(document).ready(function () {
 	$("code").bind("copy", function () {
-    var innerHtml = this.innerHTML;
-    $(this).find('.lineno').remove();
-    var that = this;
-    setTimeout(function(){
-        $(that).children().remove();
-        that.innerHTML = innerHtml;
-    },0);
+	    var innerHtml = this.innerHTML;
+	    $(this).find('.lineno').remove();
+	    var that = this;
+	    setTimeout(function(){
+	        $(that).children().remove();
+	        that.innerHTML = innerHtml;
+	    },0);
 	});
 });
 
